@@ -1,2 +1,2 @@
-Printf collaboration Project 
-Cynthia x Sam 
+Printf collaboration Project
+Cynthia x Sam
