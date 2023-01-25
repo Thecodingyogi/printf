@@ -9,7 +9,7 @@
 
 int print_str(va_list args)
 {
-	int i;
+	int i = 0;
 	int count = 0;
 	char *str;
 
