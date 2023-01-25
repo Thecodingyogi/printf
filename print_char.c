@@ -10,7 +10,7 @@
 int print_char(va_list args)
 {
 	int count = 0;
-	char c = (char)va_arg(args, int);
+	int c = va_arg(args, int);
 
 	if (c)
 	{
