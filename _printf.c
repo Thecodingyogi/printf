@@ -19,7 +19,7 @@ int _printf(const char *format, ...)
 		if (format[i] != '%')
 		{
 			num = write(1, &format[i], 1);
-			count += num;
+			count = count + num;
 			i++;
 			continue;
 		}
@@ -29,7 +29,7 @@ int _printf(const char *format, ...)
 			if (f != NULL)
 			{
 				num = f(args);
-				count += num;
+				count = count + num;
 				i = i + 2;
 				continue;
 			}
@@ -38,7 +38,7 @@ int _printf(const char *format, ...)
 			if (format[i + 1] != '\0')
 			{
 				num = write(1, &format[i], 1);
-				count += num;
+				count = count + num;
 				i = i + 2;
 				continue;
 			}

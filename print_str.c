@@ -11,6 +11,7 @@ int print_str(va_list args)
 {
 	int i = 0;
 	int count = 0;
+	int num = 0;
 	char *str;
 
 	str = va_arg(args, char *);
@@ -19,7 +20,8 @@ int print_str(va_list args)
 
 	while (str[i])
 	{
-		count = write(1, &str[i], 1);
+		num = write(1, &str[i], 1);
+		count += num;
 		i += 1;
 	}
 
