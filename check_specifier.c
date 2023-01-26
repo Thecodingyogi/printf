@@ -4,7 +4,6 @@
  * check_specifier - check that a character is a valid specifier and
  * assigns appropriate function
  * @format: the specifier
- *
  * Return: pointer to a function, NULL if not successful
  */
 
