@@ -12,17 +12,17 @@ int (*check_specifier(const char *format))(va_list)
 {
 	int i;
 
-	func_t my_array[4] = {
-		{"c", print_char},
-		{"s", print_str},
-		{"%", print_cent},
-		{NULL, NULL}};
+	fmt_t fmt_types[] = {
+		{'c', print_char},
+		{'s', print_str},
+		{'%', print_cent},
+		{'\0', NULL}};
 
-	for (i = 0; my_array[i].t != NULL; i++)
+	for (i = 0; fmt_types[i].fmt != '\0'; i++)
 	{
-		if (*(my_array[i].t) == *format)
+		if ((fmt_types[i].fmt) == *format)
 		{
-			return (my_array[i].f);
+			return (fmt_types[i].fn);
 		}
 	}
 

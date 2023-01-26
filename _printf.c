@@ -7,7 +7,7 @@
 int _printf(const char *format, ...)
 {
 	int i = 0, count = 0, num = 0;
-	int (*f)(va_list);
+	int (*fn)(va_list);
 	va_list args;
 
 	va_start(args, format);
@@ -25,17 +25,17 @@ int _printf(const char *format, ...)
 		}
 		if (format[i] == '%')
 		{
-			f = check_specifier(&format[i + 1]);
-			if (f != NULL)
+			fn = check_specifier(&format[i + 1]);
+			if (fn != NULL)
 			{
-				num = f(args);
+				num = fn(args);
 				count = count + num;
 				i = i + 2;
 				continue;
 			}
-			if (format[i + 1] == '\0')
+			if (format[i] == '\0')
 				break;
-			if (format[i + 1] != '\0')
+			if (format[i] != '\0')
 			{
 				num = write(1, &format[i], 1);
 				count = count + num;
